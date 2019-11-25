@@ -12,12 +12,12 @@
         body{
             /* display: flex; */
             /* flex-direction: column; */
+            writing-mode: vertical-rl;
         }
         #can{
             /* align-items: center; */
             background-color: #ccc;
             display: block;
-            
         }
     </style>
 </head>
@@ -82,7 +82,11 @@
                 cxt.arc(0,-w+75,10,0,2*Math.PI)
                 cxt.fill();
                 cxt.restore();
-                cxt.fillText(n,w-150,0); 
+                cxt.save();
+                cxt.translate(w-150,0);
+                cxt.rotate(0.5*Math.PI)
+                cxt.fillText(n,0,0); 
+                cxt.restore();
             }
            
             setInterval(()=>{
