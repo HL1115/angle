@@ -31,6 +31,7 @@
             var w = window.innerWidth;
             can.height = h;
             can.width = w;
+            var drag = false;
 
             function db(){
                 cxt.beginPath();
@@ -76,29 +77,68 @@
                 cxt.rotate(Math.PI/180*n); 
                 
                 cxt.moveTo(0,0);
-                cxt.lineTo(0,-w+50);
+                cxt.lineTo(w-50,0);
                 cxt.stroke();
-                cxt.moveTo(0,-w+75);
-                cxt.arc(0,-w+75,10,0,2*Math.PI)
+                cxt.moveTo(w-75,0);
+                cxt.arc(w-75,0,10,0,2*Math.PI)
                 cxt.fill();
                 cxt.restore();
                 cxt.save();
                 cxt.translate(w-150,0);
                 cxt.rotate(0.5*Math.PI)
-                cxt.fillText(n,0,0); 
+                cxt.fillText(90+n,0,0); 
                 cxt.restore();
             }
-           
-            setInterval(()=>{
-                cxt.beginPath();
+            function move(){
                 cxt.clearRect(0,0,w,h);
                 cxt.save()
                 cxt.translate(0,h/2);
-                n++;
+                // n++;
                 db();
                 draw();
                 cxt.restore()
-            },1000)
+            }
+            move()
+            can.addEventListener('touchstart',function(e){
+                if(e.touches[0].pageX>(w-90)&&e.touches[0].pageX<(w-60)&&e.touches[0].pageY<(h/2+10)&&e.touches[0].pageY>(h/2-10)){
+                    drag = true;
+                    this.curr = e.touches[0].pageY;
+                }
+                // console.log(e.touches[0].pageX)
+                // console.log(e.touches[0].pageY)
+                // console.log(w-75)
+                // console.log(h/2)
+            })
+            can.addEventListener('touchmove',function(e){
+                if(!drag){
+                    return;
+                }
+                // if(e.touches[0].pageY<this.curr){
+                   var d =  Math.asin((e.touches[0].pageY-this.curr)/(w-100))/Math.PI*180;
+                   console.log(d)
+                    this.curr = e.touches[0].pageY;
+                    cxt.clearRect(0,0,w,h);
+                    cxt.save()
+                    cxt.translate(0,h/2);
+                    n+=d;
+                    db();
+                    draw();
+                    cxt.restore()
+                // }else{
+                //     this.curr = e.touches[0].pageY;
+                //     cxt.clearRect(0,0,w,h);
+                //     cxt.save()
+                //     cxt.translate(0,h/2);
+                //     n++;
+                //     db();
+                //     draw();
+                //     cxt.restore()
+                // }
+            })
+            can.addEventListener('touchend',function(e){
+                drag = false;
+            })
+           
             
     </script>
     
