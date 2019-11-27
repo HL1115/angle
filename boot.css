@@ -48,6 +48,7 @@ body{
     background-color: #222;
     padding: 30px 0;
 }
+
 .subtit a{
     color: #9ba5af;
     font-weight: bold;
@@ -83,6 +84,9 @@ body{
     margin-top: 10px;
 }
 /* about */
+.about{
+    padding: 30px 0;
+}
 .about li{
     margin: 10px 0;
 }
@@ -90,6 +94,35 @@ body{
 .join{
     background-color: #222;
     padding: 30px 0;
+}
+.join h5 span{
+    color: #b7b5b5;
+    margin-left: 15px;
+    font-size: 16px;
+    border-left: 2px solid #3884c0;
+    padding-left: 10px;
+    font-weight: bold;
+}
+.join img{
+    border-radius: 3px;
+}
+.join p{
+    color: #b7b5b5;
+    /* font-size: 16px; */
+}
+/* news */
+.news{
+    padding: 30px 0;
+}
+.news button{
+    margin-bottom: 20px;
+}
+.news button a{
+    color: #fff;
+}
+.news img{
+    width: 100%;
+    border-radius: 3px;
 }
 @media (max-width: 750px){
     .header-top p{
