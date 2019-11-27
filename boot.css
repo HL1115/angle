@@ -1,0 +1,114 @@
+a:hover{
+    /* color: #fff; */
+    text-decoration: none;
+}
+body{
+    overflow-x: hidden;
+}
+.header-top{
+    background-color: #3884c0;
+}
+.header-top p{
+    line-height: 50px;
+    color: #fff;
+    margin-bottom: 0;
+}
+.header-top .form-group{
+    position: relative;
+}
+.header-top .glyphicon-search{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+.header .nav a{
+    color: #000;
+}
+.header .navbar-brand{
+    padding: 5px 0 0;
+}
+.logo{
+    height: 40px;
+}
+.header .nav a:hover{
+    color: #3884c0;
+    background: #fff;
+    border-bottom: 2px solid #3884c0;
+}
+.navbar-nav .active{
+    border-bottom: 2px solid #3884c0;
+}
+/* .navbar-nav li:hover{
+} */
+.navbar{
+    margin-bottom: 0;
+}
+/* 产品展示 */
+.product{
+    background-color: #222;
+    padding: 30px 0;
+}
+.subtit a{
+    color: #9ba5af;
+    font-weight: bold;
+}
+.protab{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    justify-content: center;
+}
+.protab li{
+    width: 120px;
+    text-align: center;
+}
+.protab li a{
+    color: #9ba5af;
+}
+.tab-content a{
+    width: 100%;
+}
+.tab-content a img{
+    width: 100%;
+    opacity: 0.5;
+    transition: 1s;
+    border-radius: 5px;
+}
+.tab-content a img:hover{
+    opacity: 1;
+}
+.tab-content p{
+    text-align: center;
+    color: #eee;
+    margin-top: 10px;
+}
+/* about */
+.about li{
+    margin: 10px 0;
+}
+/* join */
+.join{
+    background-color: #222;
+    padding: 30px 0;
+}
+@media (max-width: 750px){
+    .header-top p{
+        display: none;
+    }
+    .header-top .btn{
+        width: 100%;
+    }
+    .header ul li a {
+        text-align: center;
+    }
+    .header .navbar-toggle {
+        border: solid #000 1px;
+    }
+
+    .header .navbar-toggle span {
+        /* border-bottom: 1px #000 solid; */
+        background-color: #000;
+    }
+
+
+}
